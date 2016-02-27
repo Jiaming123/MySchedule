@@ -20,8 +20,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//more
-//testing
+//more and more
 public class MainActivity extends ActionBarActivity implements OnClickListener, OnItemClickListener {
 
     private ArrayAdapter<String> adapter;
