@@ -2,7 +2,8 @@
 <resources>
 
     <string name="app_name">MySchedule</string>
-
     <string name="action_settings">Settings</string>
+
+    <string name="Change_Time">Change Time</string>
 
 </resources>

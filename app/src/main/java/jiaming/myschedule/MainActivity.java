@@ -1,5 +1,6 @@
 package jiaming.myschedule;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -57,13 +58,8 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
     // This is for selecting an item from the list
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        // Get item from ListView
-        String item = (String) parent.getItemAtPosition(position);
-        String text = "You selected item " + position +
-                " value = " + item;
-        // Use a toast message to show which item selected
-        Toast toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
-        toast.show();
+        Intent intent = new Intent(MainActivity.this, PickerActivity.class);
+        startActivity(intent);
     }
 }
 
