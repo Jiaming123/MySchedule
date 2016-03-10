@@ -90,8 +90,19 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
         }
     }
 
-    ///////////////////我想问问你关于储存数据的问题，我现在问了问人，可以这个样子把条目储存猪了，但是我的
-    ///////////////////TimePicker 和DatePicker 完全不会储存，我想问问你有什么方法吗？
+/*
+    private static final String PREFS_NAME = "PrefsFile";
+    private static final String Save = "SaveOuts";
+
+    SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+    Outs = settings.getInt(Save,0);
+
+    SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+    SharedPreferences.Editor editor = settings.edit();
+    editor.putInt(Save, Outs);
+    editor.commit();
+
+ */
 
 
 }

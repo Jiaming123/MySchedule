@@ -1,22 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnChangeTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Time" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Date"
+            android:id="@+id/setdate" />
 
 
+    </LinearLayout>
 
+    <TextView
+        android:id="@+id/lblTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Time (H:M): "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TimePicker
+        android:id="@+id/timePicker1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/timePicker1"/>
+        android:layout_height="wrap_content" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Set Date"
-        android:id="@+id/setdate"
-        />
+
 
 </LinearLayout>
