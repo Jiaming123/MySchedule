@@ -21,6 +21,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import org.apache.commons.io.FileUtils;
@@ -66,8 +67,28 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(MainActivity.this, PickerActivity.class);
-        startActivity(intent);
+        //startActivity(intent);
+        startActivityForResult(intent, 2);///////**************
     }
+///////////////////////****************
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        //TODO auto-generated method stub
+        super.onActivityResult(requestCode, resultCode, data);
+
+        //check if the request code is same as what is passed here it is 2
+        if(requestCode == 2)
+        {
+            String message=data.getStringExtra("");
+
+
+
+        }
+
+
+    }
+/////////////////////*********************
 
     ////////////////save string data for Submittion
     private void readItems () {
@@ -89,6 +110,8 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
             e.printStackTrace();
         }
     }
+
+
 
 /*
     private static final String PREFS_NAME = "PrefsFile";

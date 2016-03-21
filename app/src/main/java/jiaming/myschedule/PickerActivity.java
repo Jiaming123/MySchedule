@@ -56,6 +56,20 @@ public class PickerActivity extends Activity {
 
     }
 
+    /////////////////////////*****************
+    public void Setall(View v) {
+
+        String message=tvDisplayTime.getText().toString();
+        Intent intent = new Intent();
+
+        intent.putExtra("",message);
+        setResult(2,intent);
+        finish();
+
+    }
+//////////////////////
+
+
     // display current time
     public void setCurrentTimeOnView() {
 
