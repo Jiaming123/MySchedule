@@ -19,6 +19,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -48,6 +49,15 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1 , listItems);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
+
+        //////////////long click delete()*****
+        LinearLayout layout = (LinearLayout) findViewById(R.id.listOfschedule);
+        layout.setOnLongClickListener(new View.OnLongClickListener() {
+            /////////////delete() method********
+
+
+        });
+
     }
 
     // This is for button clicks
@@ -71,6 +81,9 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
         startActivityForResult(intent, 2);///////**************
     }
 ///////////////////////****************
+
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
