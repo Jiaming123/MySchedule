@@ -1,5 +1,6 @@
 package jiaming.myschedule;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -59,6 +60,30 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
         });
 
     }
+
+    /*AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    builder.setTitle("Dialog box");
+    builder.setMessage("Max count reached. Start over?");
+    builder.setCancelable(false);
+    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        public void onClick(DialogInterface dialog, int id) {
+            count = 0;
+            // Note, you have to call update count here because.
+            //   the call builder.show() below is non blocking.
+            updateCount();
+        }
+    });
+    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+        public void onClick(DialogInterface dialog, int id) {
+            // Do nothing
+        }
+    });
+    builder.show();*/
+
+
+
+
+
 
     // This is for button clicks
     @Override
