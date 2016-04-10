@@ -27,8 +27,6 @@
         android:layout_height="100dp" />
 
 
-
-
     <TextView
         android:id="@+id/lblDate"
         android:layout_width="wrap_content"
@@ -70,13 +68,18 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Set"
+            android:text="Set and back"
             android:id="@+id/set"
             android:onClick="Setall"/>
 
     </LinearLayout>
 
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Creat Notification"
+        android:id="@+id/creat_notification_button"
+        />
 
 
 

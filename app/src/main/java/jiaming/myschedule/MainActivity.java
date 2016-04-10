@@ -52,12 +52,12 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
         listView.setOnItemClickListener(this);
 
         //////////////long click delete()*****
-        LinearLayout layout = (LinearLayout) findViewById(R.id.listOfschedule);
+        /*LinearLayout layout = (LinearLayout) findViewById(R.id.listOfschedule);
         layout.setOnLongClickListener(new View.OnLongClickListener() {
             /////////////delete() method********
 
 
-        });
+        });*/
 
     }
 
@@ -80,11 +80,6 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
     });
     builder.show();*/
 
-
-
-
-
-
     // This is for button clicks
     @Override
     public void onClick(View arg0) {
@@ -101,27 +96,28 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
     // This is for selecting an item from the list
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(MainActivity.this, PickerActivity.class);
-        //startActivity(intent);
-        startActivityForResult(intent, 2);///////**************
+        Intent i = new Intent(this, PickerActivity.class);
+        //startActivity(i);
+        startActivityForResult(i, 1);///////**************
+
+        //i.putExtra(PickerActivity.S)
+
+
     }
-///////////////////////****************
-
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        //TODO auto-generated method stub
         super.onActivityResult(requestCode, resultCode, data);
 
         //check if the request code is same as what is passed here it is 2
-        if(requestCode == 2)
+        if(requestCode == 1)
         {
-            String message=data.getStringExtra("");
 
 
-
+            if(resultCode ==PickerActivity.RESULT_CANCELED) {
+                //Write your code if there's no result
+            }
         }
 
 
@@ -148,22 +144,6 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
             e.printStackTrace();
         }
     }
-
-
-
-/*
-    private static final String PREFS_NAME = "PrefsFile";
-    private static final String Save = "SaveOuts";
-
-    SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-    Outs = settings.getInt(Save,0);
-
-    SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-    SharedPreferences.Editor editor = settings.edit();
-    editor.putInt(Save, Outs);
-    editor.commit();
-
- */
 
 
 }
