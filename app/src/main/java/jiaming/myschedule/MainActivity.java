@@ -1,5 +1,6 @@
 package jiaming.myschedule;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -52,33 +53,26 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
         listView.setOnItemClickListener(this);
 
         //////////////long click delete()*****
-        /*LinearLayout layout = (LinearLayout) findViewById(R.id.listOfschedule);
+        LinearLayout layout = (LinearLayout) findViewById(R.id.listOfschedule);
         layout.setOnLongClickListener(new View.OnLongClickListener() {
-            /////////////delete() method********
-
-
-        });*/
+            AlterDialog.Builder builder = new AlerDialog.Builder (this);
+            builder.setTitle("Dialog box");
+            builder.setMessage("Are you sure you want to delete the timer?");
+            builder.setCancelable(false);
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    deleteItems();
+                }
+            });
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    // Do nothing
+                }
+            });
+            builder.show();
+        });
 
     }
-
-    /*AlertDialog.Builder builder = new AlertDialog.Builder(this);
-    builder.setTitle("Dialog box");
-    builder.setMessage("Max count reached. Start over?");
-    builder.setCancelable(false);
-    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-        public void onClick(DialogInterface dialog, int id) {
-            count = 0;
-            // Note, you have to call update count here because.
-            //   the call builder.show() below is non blocking.
-            updateCount();
-        }
-    });
-    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-        public void onClick(DialogInterface dialog, int id) {
-            // Do nothing
-        }
-    });
-    builder.show();*/
 
     // This is for button clicks
     @Override
@@ -101,8 +95,6 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
         startActivityForResult(i, 1);///////**************
 
         //i.putExtra(PickerActivity.S)
-
-
     }
 
     @Override
@@ -113,16 +105,11 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
         //check if the request code is same as what is passed here it is 2
         if(requestCode == 1)
         {
-
-
             if(resultCode ==PickerActivity.RESULT_CANCELED) {
                 //Write your code if there's no result
             }
         }
-
-
     }
-/////////////////////*********************
 
     ////////////////save string data for Submittion
     private void readItems () {
@@ -143,6 +130,12 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    private void deleteItems() {
+        File fileDir = getFilesDir();
+        File scheduleFile = new File (fileDir, "schedule.txt");
+
+        final File[] files = scheduleFile.listFiles();
     }
 
 
