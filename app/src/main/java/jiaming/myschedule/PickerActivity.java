@@ -171,7 +171,7 @@ public class PickerActivity extends Activity {
 
         Notification = (Button) findViewById(R.id.creat_notification_button);
 
-        Notification.setOnClickListener(new OnClickListener() {
+        /*Notification.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -213,7 +213,7 @@ public class PickerActivity extends Activity {
                 }
 
             }
-        });
+        });*/
 
     }
 

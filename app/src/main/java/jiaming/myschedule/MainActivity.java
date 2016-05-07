@@ -53,7 +53,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
         listView.setOnItemClickListener(this);
 
         //////////////long click delete()*****
-        LinearLayout layout = (LinearLayout) findViewById(R.id.listOfschedule);
+        /*LinearLayout layout = (LinearLayout) findViewById(R.id.listOfschedule);
         layout.setOnLongClickListener(new View.OnLongClickListener() {
             AlterDialog.Builder builder = new AlerDialog.Builder (this);
             builder.setTitle("Dialog box");
@@ -70,7 +70,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener, 
                 }
             });
             builder.show();
-        });
+        });*/
 
     }
 
